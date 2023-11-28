@@ -9,13 +9,13 @@ services:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=easyappointments
         ports:
-            - "8001:3306"
+            - "8010:3306"
     server:
         build: ./server
         image: easyappointments-server:v1
         container_name: easyappointments-server
         ports:
-            - "8000:80"
+            - "8011:80"
         volumes:
-            - ../:/var/www/html
-            - ./server/php.ini:/usr/local/etc/php/conf.d/99-overrides.ini
+            - /home/oscar/Documentos/docker/easyappointments:/var/www/html
+            - /home/oscar/Documentos/docker/easyappointments/server/php.ini:/usr/local/etc/php/conf.d/99-overrides.ini

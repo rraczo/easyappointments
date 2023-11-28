@@ -29,7 +29,10 @@
             <!-- FRAME TOP BAR -->
 
             <div id="header">
-                <span id="company-name"><?= $company_name ?></span>
+                <span id="company-name">
+                    <img id="company-logo" style="max-height:50px" src="<?= $company_logo ?>">
+                    <?= $company_name ?>
+                </span>
 
                 <div id="steps">
                     <div id="step-1" class="book-step active-step"

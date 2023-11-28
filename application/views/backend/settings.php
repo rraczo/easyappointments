@@ -207,6 +207,13 @@
                                     <?= lang('display_any_provider_hint') ?>
                                 </span>
                             </div>
+                            <div class="form-group">
+                                <label for="company-logo"><?= lang('company_logo') ?> *</label>
+                                <input id="company-logo" data-field="company_logo" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('company_logo_hint') ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
