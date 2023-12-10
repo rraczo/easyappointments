@@ -66,8 +66,8 @@ class Appointments extends EA_Controller {
             $whatsapp_is_active = $this->settings_model->get_setting('whatsapp_is_active');
             $whatsapp_access_token = $this->settings_model->get_setting('whatsapp_access_token');
             $whatsapp_phone_number_id = $this->settings_model->get_setting('whatsapp_phone_number_id');
-            $whatsapp_template_welcome = $this->settings_model->get_setting('whatsapp_template_welcome');
-            $whatsapp_template_cancel = $this->settings_model->get_setting('whatsapp_template_cancel');
+            $whatsapp_template_confirmation = $this->settings_model->get_setting('whatsapp_template_confirmation');
+            $whatsapp_template_cancelation = $this->settings_model->get_setting('whatsapp_template_cancelation');
             $book_advance_timeout = $this->settings_model->get_setting('book_advance_timeout');
             $date_format = $this->settings_model->get_setting('date_format');
             $time_format = $this->settings_model->get_setting('time_format');
@@ -219,8 +219,8 @@ class Appointments extends EA_Controller {
                 'whatsapp_is_active' => $whatsapp_is_active,
                 'whatsapp_access_token' => $whatsapp_access_token,
                 'whatsapp_phone_number_id' => $whatsapp_phone_number_id,
-                'whatsapp_template_welcome' => $whatsapp_template_welcome,
-                'whatsapp_template_cancel' => $whatsapp_template_cancel,
+                'whatsapp_template_confirmation' => $whatsapp_template_confirmation,
+                'whatsapp_template_cancelation' => $whatsapp_template_cancelation,
                 'manage_mode' => $manage_mode,
                 'customer_token' => $customer_token,
                 'date_format' => $date_format,

@@ -249,17 +249,17 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <label for="whatsapp-template-welcome"><?= lang('whatsapp_template_welcome') ?> *</label>
-                                <input id="whatsapp-template-welcome" data-field="whatsapp_template_welcome" class="required form-control">
+                                <label for="whatsapp-template-welcome"><?= lang('whatsapp_template_confirmation') ?> *</label>
+                                <input id="whatsapp-template-welcome" data-field="whatsapp_template_confirmation" class="required form-control">
                                 <span class="form-text text-muted">
-                                    <?= lang('whatsapp_template_welcome_hint') ?>
+                                    <?= lang('whatsapp_template_confirmation_hint') ?>
                                 </span>
                             </div>
                             <div class="form-group">
-                                <label for="whatsapp-template-cancel"><?= lang('whatsapp_template_cancel') ?> *</label>
-                                <input id="whatsapp-template-cancel" data-field="whatsapp_template_cancel" class="required form-control">
+                                <label for="whatsapp-template-cancel"><?= lang('whatsapp_template_cancelation') ?> *</label>
+                                <input id="whatsapp-template-cancel" data-field="whatsapp_template_cancelation" class="required form-control">
                                 <span class="form-text text-muted">
-                                    <?= lang('whatsapp_template_cancel_hint') ?>
+                                    <?= lang('whatsapp_template_cancelation_hint') ?>
                                 </span>
                             </div>
                         </div>
