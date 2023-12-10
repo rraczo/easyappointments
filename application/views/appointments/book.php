@@ -19,6 +19,9 @@
 
     <script src="<?= asset_url('assets/ext/fontawesome/js/fontawesome.min.js') ?>"></script>
     <script src="<?= asset_url('assets/ext/fontawesome/js/solid.min.js') ?>"></script>
+    <style>
+        <?= $company_css ?>
+    </style>
 </head>
 
 <body>
@@ -27,7 +30,6 @@
         <div id="book-appointment-wizard" class="col-12 col-lg-10 col-xl-8">
 
             <!-- FRAME TOP BAR -->
-
             <div id="header">
                 <span id="company-name">
                     <img id="company-logo" style="max-height:50px" src="<?= $company_logo ?>">

@@ -49,7 +49,7 @@ window.BackendSettings = window.BackendSettings || {};
     exports.initialize = function (defaultEventHandlers) {
         defaultEventHandlers = defaultEventHandlers || true;
 
-        $('#cookie-notice-content, #terms-and-conditions-content, #privacy-policy-content').trumbowyg();
+        $('#cookie-notice-content, #terms-and-conditions-content, #privacy-policy-content, #company-css').trumbowyg();
 
         // Apply setting values from database.
         var workingPlan = {};
@@ -68,6 +68,10 @@ window.BackendSettings = window.BackendSettings || {};
 
             if (setting.name === 'require_captcha') {
                 $('#require-captcha').prop('checked', Boolean(Number(setting.value)));
+            }
+            
+            if (setting.name === 'whatsapp_is_active') {
+                $('#whatsapp-is-active').prop('checked', Boolean(Number(setting.value)));
             }
 
             if (setting.name === 'require_phone_number') {
@@ -100,6 +104,9 @@ window.BackendSettings = window.BackendSettings || {};
 
             if (setting.name === 'privacy_policy_content') {
                 $('#privacy-policy-content').trumbowyg('html', setting.value);
+            }
+            if (setting.name === 'company_css') {
+                $('#company-css').trumbowyg('html', setting.value);
             }
         });
 

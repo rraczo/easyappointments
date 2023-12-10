@@ -88,6 +88,11 @@
         });
 
         settings.push({
+            name: 'whatsapp_is_active',
+            value: $('#whatsapp-is-active').prop('checked') ? '1' : '0'
+        });
+
+        settings.push({
             name: 'require_captcha',
             value: $('#require-captcha').prop('checked') ? '1' : '0'
         });
@@ -145,6 +150,10 @@
         settings.push({
             name: 'privacy_policy_content',
             value: $('#privacy-policy-content').trumbowyg('html')
+        });
+        settings.push({
+            name: 'company_css',
+            value: $('#company-css').trumbowyg('html')
         });
 
         return settings;

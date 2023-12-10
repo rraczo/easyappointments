@@ -214,6 +214,54 @@
                                     <?= lang('company_logo_hint') ?>
                                 </span>
                             </div>
+                            <div class="form-group">
+                                <label><?= lang('company_css') ?></label>
+                                <textarea id="company-css" cols="1" rows="3" class="form-group"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="whatsapp-is-active">
+                                    <label class="custom-control-label" for="whatsapp-is-active">
+                                        <?= lang('whatsapp_is_active') ?>
+                                    </label>
+                                </div>
+                                <span class="help-block">
+                                    <?= strtr(lang('whatsapp_is_active_hint'),
+                                        [
+                                            '{$link}' => '<a href="https://developers.facebook.com/docs/whatsapp/?locale=es_LA">',
+                                            '{/$link}' => '</a>'
+                                        ])
+                                    ?>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp-access-token"><?= lang('whatsapp_access_token') ?> *</label>
+                                <input id="whatsapp-access-token" data-field="whatsapp_access_token" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('whatsapp_access_token_hint') ?>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp-phone-number-id"><?= lang('whatsapp_phone_number_id') ?> *</label>
+                                <input id="whatsapp-phone-number-id" data-field="whatsapp_phone_number_id" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('whatsapp_phone_number_id_hint') ?>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp-template-welcome"><?= lang('whatsapp_template_welcome') ?> *</label>
+                                <input id="whatsapp-template-welcome" data-field="whatsapp_template_welcome" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('whatsapp_template_welcome_hint') ?>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp-template-cancel"><?= lang('whatsapp_template_cancel') ?> *</label>
+                                <input id="whatsapp-template-cancel" data-field="whatsapp_template_cancel" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('whatsapp_template_cancel_hint') ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
