@@ -72,6 +72,7 @@ window.BackendSettings = window.BackendSettings || {};
             
             if (setting.name === 'whatsapp_is_active') {
                 $('#whatsapp-is-active').prop('checked', Boolean(Number(setting.value)));
+                whatsapp_active(!Boolean(Number(setting.value)));
             }
 
             if (setting.name === 'require_phone_number') {
@@ -262,6 +263,24 @@ window.BackendSettings = window.BackendSettings || {};
 
             GeneralFunctions.displayMessageBox(EALang.working_plan, EALang.overwrite_existing_working_plans, buttons);
         });
+        /**
+         * Event: whatapp_is_active onChange
+         *
+         * when the option whatsapp_is_active activate or disabled the whatsapp options.
+         */
+        let element_whatsapp_is_active = document.querySelector('#whatsapp-is-active')
+        if (element_whatsapp_is_active != null) {
+            $('#whatsapp-is-active').on('change', function () {
+                whatsapp_active(!$(this).is(':checked'));
+            });
+        }
+    }
+    function whatsapp_active(active){
+        $("#whatsapp-access-token").prop("disabled", active);
+        $("#whatsapp-phone-number-id").prop("disabled", active);
+        $("#whatsapp-phone-number").prop("disabled", active);
+        $("#whatsapp-template-welcome").prop("disabled", active);
+        $("#whatsapp-template-cancel").prop("disabled", active);
     }
 
 })(window.BackendSettings);
