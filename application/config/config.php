@@ -269,7 +269,7 @@ $config['directory_trigger'] = 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] =2;
 
 /*
 |--------------------------------------------------------------------------
@@ -280,7 +280,7 @@ $config['log_threshold'] = 1;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = __DIR__ . '/../../storage/logs/';
+$config['log_path'] = '/var/www/html/application/logs/';
 
 /*
 |--------------------------------------------------------------------------

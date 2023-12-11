@@ -281,6 +281,7 @@ window.BackendSettings = window.BackendSettings || {};
         $("#whatsapp-phone-number").prop("disabled", active);
         $("#whatsapp-template-welcome").prop("disabled", active);
         $("#whatsapp-template-cancel").prop("disabled", active);
+        $("#whatsapp-url-messages").prop("disabled", active);
     }
 
 })(window.BackendSettings);

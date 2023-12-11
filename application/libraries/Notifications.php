@@ -12,7 +12,9 @@
  * ---------------------------------------------------------------------------- */
 
 use EA\Engine\Notifications\Email as EmailClient;
+use EA\Engine\Notifications\WhatsApp as WhatsAppClient;
 use EA\Engine\Types\Email;
+use EA\Engine\Types\CellPhone;
 use EA\Engine\Types\Text;
 use EA\Engine\Types\Url;
 
@@ -62,6 +64,7 @@ class Notifications {
         try
         {
             $email = new EmailClient($this->CI, $this->CI->config->config);
+            $whatsapp = new WhatsAppClient($this->CI);
 
             if ($manage_mode)
             {
@@ -86,12 +89,20 @@ class Notifications {
             $send_customer = filter_var(
                 $this->CI->settings_model->get_setting('customer_notifications'),
                 FILTER_VALIDATE_BOOLEAN);
-
             if ($send_customer === TRUE)
             {
                 $email->send_appointment_details($appointment, $provider,
                     $service, $customer, $settings, $customer_title,
                     $customer_message, $customer_link, new Email($customer['email']), new Text($ics_stream), $customer['timezone']);
+                $send_whatsapp = filter_var(
+                        $this->CI->settings_model->get_setting('whatsapp_is_active'),
+                        FILTER_VALIDATE_BOOLEAN);
+                if ($send_whatsapp === TRUE)
+                {
+                    $whatsapp->send_appointment_details($appointment, $provider,
+                        $service, $customer, $settings, $provider_title,
+                        $provider_message, $appointment['hash'], new CellPhone($provider['phone_number']), new Text($ics_stream), $provider['timezone']);
+                }
             }
 
             $send_provider = filter_var(

@@ -262,6 +262,13 @@
                                     <?= lang('whatsapp_template_cancelation_hint') ?>
                                 </span>
                             </div>
+                            <div class="form-group">
+                                <label for="whatsapp-url-messages"><?= lang('whatsapp_url_messages') ?> *</label>
+                                <input id="whatsapp-url-messages" data-field="whatsapp_url_messages" class="required form-control">
+                                <span class="form-text text-muted">
+                                    <?= lang('whatsapp_url_messages_hint') ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
