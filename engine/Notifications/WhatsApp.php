@@ -136,7 +136,7 @@ class WhatsApp {
         $appointment_link = $appointment_link_address->get();
         $company_link = $settings['company_link'];
         $appointment_hash = $appointment_hash->get();
-        log_message('debug', 'Link para enviar: ' . $appointment_hash);
+        #log_message('debug', 'Link para enviar: ' . $appointment_hash);
         // URL de la API de Facebook
         $whatsapp_graph_url = sprintf($settings['whatsapp_url_messages'], $settings['whatsapp_phone_number_id']);
         // Token de acceso de WhatsApp
@@ -182,7 +182,7 @@ class WhatsApp {
         $context = stream_context_create($options);
         $response = file_get_contents($whatsapp_graph_url, false, $context);
         $http_status = http_response_code();
-        log_message('debug', 'Valor: ' . $response);
+        #log_message('debug', 'Valor: ' . $response);
         if ($http_status!==200)
         {
             throw new RuntimeException('CelPhone not a valid phone. WhatApp Error (Line ' . __LINE__ . ')');

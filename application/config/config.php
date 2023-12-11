@@ -280,7 +280,7 @@ $config['log_threshold'] =2;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '/var/www/html/application/logs/';
+$config['log_path'] = '/var/www/html/storage/logs/';
 
 /*
 |--------------------------------------------------------------------------

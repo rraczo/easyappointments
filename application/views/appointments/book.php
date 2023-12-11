@@ -97,7 +97,6 @@
                 </div>
             <?php endif ?>
 
-
             <!-- SELECT SERVICE AND PROVIDER -->
 
             <div id="wizard-frame-1" class="wizard-frame">
