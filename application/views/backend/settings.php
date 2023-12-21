@@ -216,7 +216,10 @@
                             </div>
                             <div class="form-group">
                                 <label><?= lang('company_css') ?></label>
-                                <textarea id="company-css" cols="1" rows="3" class="form-group"></textarea>
+                                <textarea id="company-css" data-field="company_css" rows="10" class="form-group"></textarea>
+                                <span class="form-text text-muted">
+                                    <?= lang('company_css_hint') ?>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-switch">

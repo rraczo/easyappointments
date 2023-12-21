@@ -20,7 +20,7 @@ namespace EA\Engine\Types;
  *
  * @package EA\Engine\Types
  */
-class CellPhone extends Type {
+class CellPhone extends Integer {
     /**
      * @param mixed $value
      * @return bool
@@ -29,6 +29,6 @@ class CellPhone extends Type {
     {
         #$patron = '/^\+\d{1,3} \(\d{3}\) \d{3}-\d{4}$|^\+\d{1,3}\d{10}$/';
         $cleanedValue = preg_replace('/[^0-9]/', '', $value);
-        return (strlen($cleanedValue) === 10);
+        return parent::validate($value) && strlen($cleanedValue) === 10;
     }
 }

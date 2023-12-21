@@ -17,6 +17,7 @@ use EA\Engine\Types\Email;
 use EA\Engine\Types\CellPhone;
 use EA\Engine\Types\Text;
 use EA\Engine\Types\Url;
+use EA\Engine\Types\Hash;
 
 /**
  * Class Notifications
@@ -99,9 +100,10 @@ class Notifications {
                         FILTER_VALIDATE_BOOLEAN);
                 if ($send_whatsapp === TRUE)
                 {
+                    #log_message('debug', 'enviando cita por whats');
                     $whatsapp->send_appointment_details($appointment, $provider,
                         $service, $customer, $settings, $provider_title,
-                        $provider_message, $appointment['hash'], new CellPhone($provider['phone_number']), new Text($ics_stream), $provider['timezone']);
+                        $provider_message, new Hash($appointment['hash']), new CellPhone($customer['phone_number']), new Text($ics_stream), $provider['timezone']);
                 }
             }
 

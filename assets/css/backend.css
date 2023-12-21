@@ -878,3 +878,7 @@ body .form-horizontal .controls {
 #settings-page #update-ea {
     margin-left: 12px;
 }
+
+#company-css {
+    width: 100%;
+}

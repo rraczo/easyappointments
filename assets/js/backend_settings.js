@@ -49,7 +49,7 @@ window.BackendSettings = window.BackendSettings || {};
     exports.initialize = function (defaultEventHandlers) {
         defaultEventHandlers = defaultEventHandlers || true;
 
-        $('#cookie-notice-content, #terms-and-conditions-content, #privacy-policy-content, #company-css').trumbowyg();
+        $('#cookie-notice-content, #terms-and-conditions-content, #privacy-policy-content').trumbowyg();
 
         // Apply setting values from database.
         var workingPlan = {};
@@ -107,7 +107,7 @@ window.BackendSettings = window.BackendSettings || {};
                 $('#privacy-policy-content').trumbowyg('html', setting.value);
             }
             if (setting.name === 'company_css') {
-                $('#company-css').trumbowyg('html', setting.value);
+                $('#company-css').val(setting.value);
             }
         });
 

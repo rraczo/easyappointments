@@ -153,7 +153,7 @@
         });
         settings.push({
             name: 'company_css',
-            value: $('#company-css').trumbowyg('html')
+            value: $('#company-css').val()
         });
 
         return settings;

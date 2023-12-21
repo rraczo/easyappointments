@@ -12,7 +12,9 @@
  * ---------------------------------------------------------------------------- */
 
 use EA\Engine\Notifications\Email as EmailClient;
+use EA\Engine\Notifications\WhatsApp as WhatsAppClient;
 use EA\Engine\Types\Email;
+use EA\Engine\Types\CellPhone;
 use EA\Engine\Types\Text;
 
 /**
@@ -371,6 +373,15 @@ class Backend_api extends EA_Controller {
                 'date_format' => $this->settings_model->get_setting('date_format'),
                 'time_format' => $this->settings_model->get_setting('time_format')
             ];
+            $send_whatsapp = $this->settings_model->get_setting('whatsapp_is_active');
+            if ((bool)$send_whatsapp === TRUE)
+            {
+                $settings['whatsapp_url_messages'] = $this->settings_model->get_setting('whatsapp_url_messages');
+                $settings['whatsapp_phone_number_id'] = $this->settings_model->get_setting('whatsapp_phone_number_id');
+                $settings['whatsapp_access_token'] = $this->settings_model->get_setting('whatsapp_access_token');
+                $settings['whatsapp_template_cancelation'] = $this->settings_model->get_setting('whatsapp_template_cancelation');
+                $settings['whatsapp_template_confirmation'] = $this->settings_model->get_setting('whatsapp_template_confirmation');
+            }
 
             // Delete appointment record from the database.
             $this->appointments_model->delete($this->input->post('appointment_id'));
@@ -405,6 +416,7 @@ class Backend_api extends EA_Controller {
                 $this->config->load('email');
 
                 $email = new EmailClient($this, $this->config->config);
+                $whatsapp = new WhatsAppClient($this);
 
                 $send_provider = $this->providers_model
                     ->get_setting('notifications', $provider['id']);
@@ -423,6 +435,13 @@ class Backend_api extends EA_Controller {
                     $email->send_delete_appointment($appointment, $provider,
                         $service, $customer, $settings, new Email($customer['email']),
                         new Text($this->input->post('delete_reason')));
+
+                    if ((bool)$send_whatsapp === TRUE)
+                    {
+                        $whatsapp->send_delete_appointment($appointment, $provider,
+                            $service, $customer, $settings, new CellPhone($customer['phone_number']),
+                            new Text($this->input->post('delete_reason')));
+                    }
                 }
 
                 // Notify admins

@@ -104,6 +104,14 @@ class Customers_model extends EA_Model {
         {
             throw new Exception('Invalid email address provided: ' . $customer['email']);
         }
+        // Validate phone number
+        if ($phone_number_required)
+        {
+            if ((! isset($customer['phone_number']) || ! is_numeric($customer['phone_number']) || strlen($customer['phone_number']) !== 10))
+            {
+                throw new Exception('Invalid cellphone provided: ' . $customer['phone_number']);
+            }
+        }
 
         // When inserting a record the email address must be unique.
         $customer_id = isset($customer['id']) ? $customer['id'] : '';
