@@ -164,7 +164,7 @@ class WhatsApp {
                         'index' => '0',
                         'sub_type' => 'url',
                         'parameters' => [
-                            ['type' => 'text', 'text' => $company_link]
+                            ['type' => 'text', 'text' => $appointment_hash]
                         ]
                     ]
                 ]

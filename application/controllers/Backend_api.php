@@ -318,6 +318,15 @@ class Backend_api extends EA_Controller {
                 'date_format' => $this->settings_model->get_setting('date_format'),
                 'time_format' => $this->settings_model->get_setting('time_format')
             ];
+            $send_whatsapp = $this->settings_model->get_setting('whatsapp_is_active');
+            if ((bool)$send_whatsapp === TRUE)
+            {
+                $settings['whatsapp_url_messages'] = $this->settings_model->get_setting('whatsapp_url_messages');
+                $settings['whatsapp_phone_number_id'] = $this->settings_model->get_setting('whatsapp_phone_number_id');
+                $settings['whatsapp_access_token'] = $this->settings_model->get_setting('whatsapp_access_token');
+                $settings['whatsapp_template_cancelation'] = $this->settings_model->get_setting('whatsapp_template_cancelation');
+                $settings['whatsapp_template_confirmation'] = $this->settings_model->get_setting('whatsapp_template_confirmation');
+            }
 
             $this->synchronization->sync_appointment_saved($appointment, $service, $provider, $customer, $settings, $manage_mode);
             $this->notifications->notify_appointment_saved($appointment, $service, $provider, $customer, $settings, $manage_mode);
