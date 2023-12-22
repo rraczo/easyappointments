@@ -69,6 +69,7 @@ class Backend extends EA_Controller {
         $view['page_title'] = lang('calendar');
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_APPOINTMENTS;
+        $view['company_css'] = $this->settings_model->get_setting('company_css');
         $view['date_format'] = $this->settings_model->get_setting('date_format');
         $view['time_format'] = $this->settings_model->get_setting('time_format');
         $view['first_weekday'] = $this->settings_model->get_setting('first_weekday');
@@ -198,6 +199,7 @@ class Backend extends EA_Controller {
 
         $view['base_url'] = config('base_url');
         $view['page_title'] = lang('customers');
+        $view['company_css'] = $this->settings_model->get_setting('company_css');
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_CUSTOMERS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
@@ -246,6 +248,7 @@ class Backend extends EA_Controller {
 
         $view['base_url'] = config('base_url');
         $view['page_title'] = lang('services');
+        $view['company_css'] = $this->settings_model->get_setting('company_css');
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_SERVICES;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
@@ -279,6 +282,7 @@ class Backend extends EA_Controller {
 
         $view['base_url'] = config('base_url');
         $view['page_title'] = lang('users');
+        $view['company_css'] = $this->settings_model->get_setting('company_css');
         $view['user_display_name'] = $this->user_model->get_user_display_name($this->session->userdata('user_id'));
         $view['active_menu'] = PRIV_USERS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');
@@ -319,6 +323,7 @@ class Backend extends EA_Controller {
 
         $view['base_url'] = config('base_url');
         $view['page_title'] = lang('settings');
+        $view['company_css'] = $this->settings_model->get_setting('company_css');
         $view['user_display_name'] = $this->user_model->get_user_display_name($user_id);
         $view['active_menu'] = PRIV_SYSTEM_SETTINGS;
         $view['company_name'] = $this->settings_model->get_setting('company_name');

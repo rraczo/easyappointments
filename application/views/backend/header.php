@@ -15,7 +15,9 @@
 
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
     <link rel="icon" sizes="192x192" href="<?= asset_url('assets/img/logo.png') ?>">
-
+    <style>
+        <?= $company_css ?>
+    </style>
     <script>
         // Global JavaScript Variables - Used in all backend pages.
         var availableLanguages = <?= json_encode(config('available_languages')) ?>;

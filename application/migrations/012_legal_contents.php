@@ -53,6 +53,26 @@ class Migration_Legal_contents extends CI_Migration {
             'value' => 'Privacy policy content.'
         ]);
 
+        $this->db->insert('settings', [
+            'name' => 'whatsapp_is_active',
+            'value' => '0'
+        ]);
+
+        $this->db->insert('settings', [
+            'name' => 'whatsapp_template_confirmation',
+            'value' => 'cita_confirmation'
+        ]);
+        
+        $this->db->insert('settings', [
+            'name' => 'whatsapp_template_cancelation',
+            'value' => 'cita_cancelation'
+        ]);
+        
+        $this->db->insert('settings', [
+            'name' => 'whatsapp_url_messages',
+            'value' => 'https://graph.facebook.com/v17.0/%s/messages'
+        ]);
+
         $this->dbforge->add_field([
             'id' => [
                 'type' => 'INT',
