@@ -17,14 +17,14 @@
  * @property CI_DB_query_builder $db
  * @property CI_DB_forge $dbforge
  */
-class Migration_Add_require_address_setting extends CI_Migration {
+class Migration_Add_require_customer_address_setting extends CI_Migration {
     /**
      * Upgrade method.
      */
     public function up()
     {
         $this->db->insert('settings', [
-            'name' => 'require_address',
+            'name' => 'require_customer_address',
             'value' => '1'
         ]);
     }
@@ -34,6 +34,6 @@ class Migration_Add_require_address_setting extends CI_Migration {
      */
     public function down()
     {
-        $this->db->delete('settings', ['name' => 'require_address']);
+        $this->db->delete('settings', ['name' => 'require_customer_address']);
     }
 }
