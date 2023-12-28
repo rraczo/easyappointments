@@ -87,6 +87,7 @@ class Customers_model extends EA_Model {
         }
 
         $phone_number_required = $this->db->get_where('settings', ['name' => 'require_phone_number'])->row()->value === '1';
+        $customer_address_required = $this->db->get_where('settings', ['name' => 'require_customer_address'])->row()->value === '1';
 
         // Validate required fields
         if ( ! isset(
@@ -94,7 +95,9 @@ class Customers_model extends EA_Model {
                 $customer['last_name'],
                 $customer['email']
             )
-            || ( ! isset($customer['phone_number']) && $phone_number_required))
+            || ( ! isset($customer['phone_number']) && $phone_number_required)
+            || ( ! isset($customer['address']) && $customer_address_required)
+            )
         {
             throw new Exception('Not all required fields are provided: ' . print_r($customer, TRUE));
         }
@@ -110,6 +113,14 @@ class Customers_model extends EA_Model {
             if ((! isset($customer['phone_number']) || ! is_numeric($customer['phone_number']) || strlen($customer['phone_number']) !== 10))
             {
                 throw new Exception('Invalid cellphone provided: ' . $customer['phone_number']);
+            }
+        }
+        // Validate customer address
+        if ($customer_address_required)
+        {
+            if (! isset($customer['address']))
+            {
+                throw new Exception('Invalid address provided: ' . $customer['address']);
             }
         }
 

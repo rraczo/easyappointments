@@ -230,6 +230,24 @@ window.GeneralFunctions = window.GeneralFunctions || {};
         var re = /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/;
         return re.test(email);
     };
+    /**
+     * Validate Phone number (cellphone only númbers and min9 max15 digits without  International Dialing Code)
+     *
+     * 
+     * form then the result is FALSE.
+     *
+     *
+     * @param {String} CellPhone The cellphone to be checked.
+
+     * @return {Boolean} Returns the validation result.
+     */
+    exports.validateCellPhone = function (cellphone) {
+        let res = false;
+        if (/^\d+$/.test(cellphone) && cellphone.length > 9 && cellphone.length < 15) {
+            res = true;
+        }
+        return res
+    };
 
 
     /**

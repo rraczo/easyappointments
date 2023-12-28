@@ -195,6 +195,15 @@
                                 <span class="help-block">
                                     <?= lang('require_phone_number_hint') ?>
                                 </span>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="require-customer-address">
+                                    <label class="custom-control-label" for="require-customer-address">
+                                        <?= lang('require_customer_address') ?>
+                                    </label>
+                                </div>
+                                <span class="help-block">
+                                    <?= lang('require_customer_address_hint') ?>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-switch">

@@ -286,8 +286,10 @@
                             <div class="form-group">
                                 <label for="address" class="control-label">
                                     <?= lang('address') ?>
+                                    <?= $require_customer_address === '1' ? '<span class="text-danger">*</span>' : '' ?>
                                 </label>
-                                <input type="text" id="address" class="form-control" maxlength="120"/>
+                                <input type="text" id="address" maxlength="120"
+                                    class="<?= $require_customer_address === '1' ? 'required' : '' ?> form-control"/>
                             </div>
                             <div class="form-group">
                                 <label for="city" class="control-label">

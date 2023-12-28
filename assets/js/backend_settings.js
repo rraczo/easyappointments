@@ -78,6 +78,10 @@ window.BackendSettings = window.BackendSettings || {};
             if (setting.name === 'require_phone_number') {
                 $('#require-phone-number').prop('checked', Boolean(Number(setting.value)));
             }
+            
+            if (setting.name === 'require_customer_address') {
+                $('#require-customer-address').prop('checked', Boolean(Number(setting.value)));
+            }
 
             if (setting.name === 'display_any_provider') {
                 $('#display-any-provider').prop('checked', Boolean(Number(setting.value)));
