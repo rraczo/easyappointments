@@ -109,7 +109,7 @@ class Console extends EA_Controller {
             'first_name' => 'John',
             'last_name' => 'Doe',
             'email' => 'john@example.org',
-            'phone_number' => '+1 (000) 000-0000',
+            'phone_number' => '0000000000',
             'settings' => [
                 'username' => 'administrator',
                 'password' => 'administrator',
@@ -133,7 +133,7 @@ class Console extends EA_Controller {
             'first_name' => 'Jane',
             'last_name' => 'Doe',
             'email' => 'jane@example.org',
-            'phone_number' => '+1 (000) 000-0000',
+            'phone_number' => '0000000000',
             'services' => [
                 $service_id
             ],
@@ -154,7 +154,7 @@ class Console extends EA_Controller {
             'first_name' => 'James',
             'last_name' => 'Doe',
             'email' => 'james@example.org',
-            'phone_number' => '+1 (000) 000-0000',
+            'phone_number' => '0000000000',
         ]);
     }
 

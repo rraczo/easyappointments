@@ -17,7 +17,7 @@
  * @property CI_DB_query_builder $db
  * @property CI_DB_forge $dbforge
  */
-class Migration_Add_whatsapp_setting extends CI_Migration {
+class Migration_Add_whatsapp_settings extends CI_Migration {
     /**
      * Upgrade method.
      */
