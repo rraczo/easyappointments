@@ -25,7 +25,7 @@ class Migration_Add_require_customer_address_setting extends CI_Migration {
     {
         $this->db->insert('settings', [
             'name' => 'require_customer_address',
-            'value' => '1'
+            'value' => '0'
         ]);
     }
 
