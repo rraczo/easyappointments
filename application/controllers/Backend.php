@@ -75,6 +75,7 @@ class Backend extends EA_Controller {
         $view['first_weekday'] = $this->settings_model->get_setting('first_weekday');
         $view['company_name'] = $this->settings_model->get_setting('company_name');
         $view['require_phone_number'] = $this->settings_model->get_setting('require_phone_number');
+        $view['require_customer_address'] = $this->settings_model->get_setting('require_customer_address');
         $view['available_providers'] = $this->providers_model->get_available_providers();
         $view['available_services'] = $this->services_model->get_available_services();
         $view['customers'] = $this->customers_model->get_batch();

@@ -531,6 +531,12 @@ window.BackendCalendarAppointmentsModal = window.BackendCalendarAppointmentsModa
                 $dialog.find('#email').closest('.form-group').addClass('has-error');
                 throw new Error(EALang.invalid_email);
             }
+            
+            // Validate phone number.
+            if (!GeneralFunctions.validateCellPhone($dialog.find('#phone-number').val())) {
+                $dialog.find('#phone-number').closest('.form-group').addClass('has-error');
+                throw new Error(EALang.invalid_phone_number);
+            }
 
             // Check appointment start and end time.
             var start = $('#start-datetime').datetimepicker('getDate');

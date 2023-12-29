@@ -334,8 +334,12 @@
                                 <div class="form-group">
                                     <label for="address" class="control-label">
                                         <?= lang('address') ?>
+                                        <?php if ($require_customer_address === '1'): ?>
+                                            <span class="text-danger">*</span>
+                                        <?php endif ?>
                                     </label>
-                                    <input id="address" class="form-control">
+                                    <input id="address" 
+                                        class="form-control <?= $require_customer_address === '1' ? 'required' : '' ?>">
                                 </div>
 
                                 <div class="form-group">

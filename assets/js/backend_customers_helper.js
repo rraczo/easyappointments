@@ -240,7 +240,11 @@
                 $('#email').closest('.form-group').addClass('has-error');
                 throw new Error(EALang.invalid_email);
             }
-
+            // Validate phone number.
+            if (!GeneralFunctions.validateCellPhone($('#phone-number').val())) {
+                $('#phone-number').closest('.form-group').addClass('has-error');
+                throw new Error(EALang.invalid_phone_number);
+            }
             return true;
         } catch (error) {
             $('#form-message')

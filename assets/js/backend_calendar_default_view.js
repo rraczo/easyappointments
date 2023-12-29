@@ -605,6 +605,13 @@ window.BackendCalendarDefaultView = window.BackendCalendarDefaultView || {};
                         'text': getEventNotes(event)
                     }),
                     $('<br/>'),
+                    $('<strong/>', {
+                        'text': EALang.address
+                    }),
+                    $('<span/>', {
+                        'text': event.data.customer.address
+                    }),
+                    $('<br/>'),
 
                     $('<hr/>'),
 
